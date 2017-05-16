@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://shynee.github.io/2017/05/12/css-style-guide/index.html">
 <meta property="og:site_name" content="Shynee">
 <meta property="og:description" content="1.前言制作规范的主要目的在于：  培养自己良好的编码和协同习惯 统一代码风格，提升代码质量和可维护性 减少无谓的思考，提升工作效率  2.代码风格2.1 文件[建议] css文件使用无 BOM 的 UTF-8 编码。解释：UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文件时可能造成不必要的干扰。参考：「带 BOM 的 UTF-8」和「无 BOM 的 UTF-8」有什么区别 2.">
-<meta property="og:updated_time" content="2017-05-12T10:25:32.329Z">
+<meta property="og:updated_time" content="2017-05-16T08:04:52.026Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS编码规范">
 <meta name="twitter:description" content="1.前言制作规范的主要目的在于：  培养自己良好的编码和协同习惯 统一代码风格，提升代码质量和可维护性 减少无谓的思考，提升工作效率  2.代码风格2.1 文件[建议] css文件使用无 BOM 的 UTF-8 编码。解释：UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文件时可能造成不必要的干扰。参考：「带 BOM 的 UTF-8」和「无 BOM 的 UTF-8」有什么区别 2.">
@@ -123,8 +123,114 @@
 <p>[建议] 注释与选择器之间不换行，尽量不要带有一些抢眼的特殊字符。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/* good */</div><div class="line">/* Galary Header */</div><div class="line">.glr-head &#123;</div><div class="line">    margin: 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* bad */</div><div class="line">/* ---------------Galary Header---------------------- */</div><div class="line">.glr-head &#123;</div><div class="line">    margin: 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* ##############Galary Header################# */</div><div class="line">.glr-head &#123;</div><div class="line">    margin: 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="3-通用"><a href="#3-通用" class="headerlink" title="3. 通用"></a>3. 通用</h2><h3 id="3-1-选择器"><a href="#3-1-选择器" class="headerlink" title="3.1 选择器"></a>3.1 选择器</h3><p>[强制] 如无必要，不得为 id、class 选择器添加类型选择器进行限定。<br>解释：在性能和维护性上，都有一定的影响。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/* good */</div><div class="line">#error,</div><div class="line">.danger-message &#123;</div><div class="line">    font-color: #c00;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* bad */</div><div class="line">dialog#error,</div><div class="line">p.danger-message &#123;</div><div class="line">    font-color: #c00;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>[建议] 选择器的嵌套层级应不大于 3 级，位置靠后的限定条件应尽可能精确。<br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/* good */</div><div class="line">#username input &#123;&#125;</div><div class="line">.comment .avatar .icon &#123;&#125;</div><div class="line"></div><div class="line">/* bad */</div><div class="line">.page .header .login #username input &#123;&#125;</div><div class="line">.comment div * &#123;&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="7-说明"><a href="#7-说明" class="headerlink" title="7. 说明"></a>7. 说明</h2><p>本规范基于一些大厂规范和作者觉得比较好的方式做的一个整理<br>命名方式 和 注释规范 还有部分内容待整理</p>
-<h2 id="8-版本"><a href="#8-版本" class="headerlink" title="8. 版本"></a>8. 版本</h2><p>当前版本 v1.0 beta<br>作者 Shynee shynefu@gmail.com<br>最后更新时间 2017-05-12</p>
+<h3 id="3-2-属性缩写"><a href="#3-2-属性缩写" class="headerlink" title="3.2 属性缩写"></a>3.2 属性缩写</h3><p>[建议] 在可以使用缩写的情况下，尽量使用属性缩写。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">/* good */</div><div class="line">.post &#123;</div><div class="line">    font: 12px/1.5 arial, sans-serif;</div><div class="line">    border: 1px solid #ccc;</div><div class="line">    margin: 10px auto;</div><div class="line">    padding: 5px 0 5px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* bad */</div><div class="line">.post &#123;</div><div class="line">    font-family: arial, sans-serif;</div><div class="line">    font-size: 12px;</div><div class="line">    line-height: 1.5;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="3-3-属性书写顺序"><a href="#3-3-属性书写顺序" class="headerlink" title="3.3 属性书写顺序"></a>3.3 属性书写顺序</h3><p>[建议] 同一 rule set 下的属性在书写时，应按功能进行分组，并以 Formatting Model（布局方式、位置） &gt; Box Model（尺寸） &gt; Typographic（文本相关） &gt; Visual（视觉效果） 的顺序书写，以提高代码的可读性。<br>解释：</p>
+<ul>
+<li>Formatting Model 相关属性包括：position / top / right / bottom / left / float / display / overflow 等</li>
+<li>Box Model 相关属性包括：border / margin / padding / width / height 等</li>
+<li>Typographic 相关属性包括：font / line-height / text-align / word-wrap 等</li>
+<li>Visual 相关属性包括：background / color / transition / list-style 等<br>另外，如果包含 content 属性，应放在最前面。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">.sidebar &#123;</div><div class="line">    /* formatting model: positioning schemes / offsets / z-indexes / display / ...  */</div><div class="line">    position: absolute;</div><div class="line">    top: 50px;</div><div class="line">    left: 0;</div><div class="line">    overflow-x: hidden;</div><div class="line"></div><div class="line">    /* box model: sizes / margins / paddings / borders / ...  */</div><div class="line">    width: 200px;</div><div class="line">    padding: 5px;</div><div class="line">    border: 1px solid #ddd;</div><div class="line"></div><div class="line">    /* typographic: font / aligns / text styles / ... */</div><div class="line">    font-size: 14px;</div><div class="line">    line-height: 20px;</div><div class="line"></div><div class="line">    /* visual: colors / shadows / gradients / ... */</div><div class="line">    background: #f5f5f5;</div><div class="line">    color: #333;</div><div class="line">    -webkit-transition: color 1s;</div><div class="line">       -moz-transition: color 1s;</div><div class="line">            transition: color 1s;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-4-清除浮动"><a href="#3-4-清除浮动" class="headerlink" title="3.4 清除浮动"></a>3.4 清除浮动</h3><p>[建议] 当元素需要撑起高度以包含内部的浮动元素时，通过对伪类设置 clear 或触发 BFC 的方式进行 clearfix。尽量不使用增加空标签的方式。<br>解释：<br>触发 BFC 的方式很多，常见的有：</p>
+<ul>
+<li>float 非 none</li>
+<li>position 非 static</li>
+<li>overflow 非 visible<br>如希望使用更小副作用的清除浮动方法，参见 <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank" rel="external">A new micro clearfix hack</a> 一文。<br>另需注意，对已经触发 BFC 的元素不需要再进行 clearfix。</li>
+</ul>
+<h3 id="3-5-important"><a href="#3-5-important" class="headerlink" title="3.5 !important"></a>3.5 !important</h3><p>[建议] 尽量不使用 !important 声明。</p>
+<p>[建议] 当需要强制指定样式且不允许任何场景覆盖时，通过标签内联和 !important 定义样式。<br>解释：<br>必须注意的是，仅在设计上 确实不允许任何其它场景覆盖样式 时，才使用内联的 !important 样式。通常在第三方环境的应用中使用这种方案。下面的 z-index 章节是其中一个特殊场景的典型样例。</p>
+<h3 id="3-6-z-index"><a href="#3-6-z-index" class="headerlink" title="3.6 z-index"></a>3.6 z-index</h3><p>[建议] 将 z-index 进行分层，对文档流外绝对定位元素的视觉层级关系进行管理。<br>解释：<br>同层的多个元素，如多个由用户输入触发的 Dialog，在该层级内使用相同的 z-index 或递增 z-index。<br>建议每层包含100个 z-index 来容纳足够的元素，如果每层元素较多，可以调整这个数值。</p>
+<p>[建议] 在可控环境下，期望显示在最上层的元素，z-index 指定为 999999。<br>解释：<br>可控环境分成两种，一种是自身产品线环境；还有一种是可能会被其他产品线引用，但是不会被外部第三方的产品引用。<br>不建议取值为 2147483647。以便于自身产品线被其他产品线引用时，当遇到层级覆盖冲突的情况，留出向上调整的空间。</p>
+<p>[建议] 在第三方环境下，期望显示在最上层的元素，通过标签内联和 !important，将 z-index 指定为 2147483647。<br>解释：<br>第三方环境对于开发者来说完全不可控。在第三方环境下的元素，为了保证元素不被其页面其他样式定义覆盖，需要采用此做法。</p>
+<h2 id="4-值与单位"><a href="#4-值与单位" class="headerlink" title="4. 值与单位"></a>4. 值与单位</h2><h3 id="4-1-文本"><a href="#4-1-文本" class="headerlink" title="4.1 文本"></a>4.1 文本</h3><p>[强制] 文本内容必须用双引号包围。<br>解释：<br>文本类型的内容可能在选择器、属性值等内容中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">/* good */</div><div class="line">html[lang|=&quot;zh&quot;] q:before &#123;</div><div class="line">    font-family: &quot;Microsoft YaHei&quot;, sans-serif;</div><div class="line">    content: &quot;“&quot;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">html[lang|=&quot;zh&quot;] q:after &#123;</div><div class="line">    font-family: &quot;Microsoft YaHei&quot;, sans-serif;</div><div class="line">    content: &quot;”&quot;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* bad */</div><div class="line">html[lang|=zh] q:before &#123;</div><div class="line">    font-family: &apos;Microsoft YaHei&apos;, sans-serif;</div><div class="line">    content: &apos;“&apos;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">html[lang|=zh] q:after &#123;</div><div class="line">    font-family: &quot;Microsoft YaHei&quot;, sans-serif;</div><div class="line">    content: &quot;”&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="4-2-数值"><a href="#4-2-数值" class="headerlink" title="4.2 数值"></a>4.2 数值</h3><p>[强制] 当数值为 0 - 1 之间的小数时，省略整数部分的 0。当数值小于 0 时，带上整数部分 0。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/* good */</div><div class="line">panel &#123;</div><div class="line">    opacity: .8</div><div class="line">    margin: -0.1rem 0 1rem;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* bad */</div><div class="line">panel &#123;</div><div class="line">    opacity: 0.8</div><div class="line">    margin: -.1rem 0 1rem;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="4-3-url"><a href="#4-3-url" class="headerlink" title="4.3 url()"></a>4.3 url()</h3><p>[强制] url() 函数中的路径不加引号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body &#123;</div><div class="line">    background: url(bg.png);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>[建议] url() 函数中的绝对路径可省去协议名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body &#123;</div><div class="line">    background: url(//baidu.com/img/bg.png) no-repeat 0 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="4-4-长度"><a href="#4-4-长度" class="headerlink" title="4.4 长度"></a>4.4 长度</h3><p>[强制] 长度为 0 时须省略单位。 (也只有长度单位可省)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/* good */</div><div class="line">body &#123;</div><div class="line">    padding: 0 5px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* bad */</div><div class="line">body &#123;</div><div class="line">    padding: 0px 5px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="4-5-颜色"><a href="#4-5-颜色" class="headerlink" title="4.5 颜色"></a>4.5 颜色</h3><p>[强制] RGB颜色值必须使用十六进制记号形式 #rrggbb。不允许使用 rgb()。<br>解释：<br>带有alpha的颜色信息可以使用 rgba()。使用 rgba() 时每个逗号后必须保留一个空格。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/* good */</div><div class="line">.success &#123;</div><div class="line">    box-shadow: 0 0 2px rgba(0, 128, 0, .3);</div><div class="line">    border-color: #008000;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* bad */</div><div class="line">.success &#123;</div><div class="line">    box-shadow: 0 0 2px rgba(0,128,0,.3);</div><div class="line">    border-color: rgb(0, 128, 0);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>[强制] 颜色值可以缩写时，必须使用缩写形式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/* good */</div><div class="line">.success &#123;</div><div class="line">    background-color: #aca;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* bad */</div><div class="line">.success &#123;</div><div class="line">    background-color: #aaccaa;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>[强制] 颜色值不允许使用命名色值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/* good */</div><div class="line">.success &#123;</div><div class="line">    color: #90ee90;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* bad */</div><div class="line">.success &#123;</div><div class="line">    color: lightgreen;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>[建议] 颜色值中的英文字符采用小写。如不用小写也需要保证同一项目内保持大小写一致。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">/* good */</div><div class="line">.success &#123;</div><div class="line">    background-color: #aca;</div><div class="line">    color: #90ee90;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* good */</div><div class="line">.success &#123;</div><div class="line">    background-color: #ACA;</div><div class="line">    color: #90EE90;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* bad */</div><div class="line">.success &#123;</div><div class="line">    background-color: #ACA;</div><div class="line">    color: #90ee90;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="4-6-2D-位置"><a href="#4-6-2D-位置" class="headerlink" title="4.6 2D 位置"></a>4.6 2D 位置</h3><p>[强制] 必须同时给出水平和垂直方向的位置。<br>解释：<br>2D 位置初始值为 0% 0%，但在只有一个方向的值时，另一个方向的值会被解析为 center。为避免理解上的困扰，应同时给出两个方向的值。<a href="https://www.w3.org/TR/CSS21/colors.html#propdef-background-position" target="_blank" rel="external">background-position属性值的定义</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/* good */</div><div class="line">body &#123;</div><div class="line">    background-position: center top; /* 50% 0% */</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* bad */</div><div class="line">body &#123;</div><div class="line">    background-position: top; /* 50% 0% */</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="5-文本编排"><a href="#5-文本编排" class="headerlink" title="5. 文本编排"></a>5. 文本编排</h2><h3 id="5-1-字体族"><a href="#5-1-字体族" class="headerlink" title="5.1 字体族"></a>5.1 字体族</h3><p>[强制] font-family 属性中的字体族名称应使用字体的英文 Family Name，其中如有空格，须放置在引号中。<br>解释：<br>所谓英文 Family Name，为字体文件的一个元数据，常见名称如下：</p>
+<table>
+<thead>
+<tr>
+<th>字体</th>
+<th>操作系统</th>
+<th>Family Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>宋体 (中易宋体)</td>
+<td>Windows</td>
+<td>SimSun</td>
+</tr>
+<tr>
+<td>黑体 (中易黑体)</td>
+<td>Windows</td>
+<td>SimHei</td>
+</tr>
+<tr>
+<td>微软雅黑</td>
+<td>Windows</td>
+<td>Microsoft YaHei</td>
+</tr>
+<tr>
+<td>微软正黑</td>
+<td>Windows</td>
+<td>Microsoft JhengHei</td>
+</tr>
+<tr>
+<td>华文黑体</td>
+<td>Mac/iOS</td>
+<td>STHeiti</td>
+</tr>
+<tr>
+<td>冬青黑体</td>
+<td>Mac/iOS</td>
+<td>Hiragino Sans GB</td>
+</tr>
+<tr>
+<td>文泉驿正黑</td>
+<td>Linux</td>
+<td>WenQuanYi Zen Hei</td>
+</tr>
+<tr>
+<td>文泉驿微米黑</td>
+<td>Linux</td>
+<td>WenQuanYi Micro Hei</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">h1 &#123;</div><div class="line">    font-family: &quot;Microsoft YaHei&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>[强制] font-family 按「西文字体在前、中文字体在后」、「效果佳 (质量高/更能满足需求) 的字体在前、效果一般的字体在后」的顺序编写，最后必须指定一个通用字体族( serif / sans-serif )。<br>解释：<br>更详细说明可参考<a href="https://www.zhihu.com/question/19911793/answer/13329819" target="_blank" rel="external">本文</a>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/* Display according to platform */</div><div class="line">.article &#123;</div><div class="line">    font-family: Arial, sans-serif;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* Specific for most platforms */</div><div class="line">h1 &#123;</div><div class="line">    font-family: &quot;Helvetica Neue&quot;, Arial, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Microsoft YaHei&quot;, sans-serif;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>[强制] font-family 不区分大小写，但在同一个项目中，同样的 Family Name 大小写必须统一。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">/* good */</div><div class="line">body &#123;</div><div class="line">    font-family: Arial, sans-serif;</div><div class="line">&#125;</div><div class="line"></div><div class="line">h1 &#123;</div><div class="line">    font-family: Arial, &quot;Microsoft YaHei&quot;, sans-serif;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* bad */</div><div class="line">body &#123;</div><div class="line">    font-family: arial, sans-serif;</div><div class="line">&#125;</div><div class="line"></div><div class="line">h1 &#123;</div><div class="line">    font-family: Arial, &quot;Microsoft YaHei&quot;, sans-serif;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="5-2-字号"><a href="#5-2-字号" class="headerlink" title="5.2 字号"></a>5.2 字号</h3><p>[强制] 需要在 Windows 平台显示的中文内容，其字号应不小于 12px。<br>解释：<br>由于 Windows 的字体渲染机制，小于 12px 的文字显示效果极差、难以辨认。</p>
+<h3 id="5-3-字体风格"><a href="#5-3-字体风格" class="headerlink" title="5.3 字体风格"></a>5.3 字体风格</h3><p>[建议] 需要在 Windows 平台显示的中文内容，不要使用除 normal 外的 font-style。其他平台也应慎用。<br>解释：<br>由于中文字体没有 italic 风格的实现，所有浏览器下都会 fallback 到 obilique 实现 (自动拟合为斜体)，小字号下 (特别是 Windows 下会在小字号下使用点阵字体的情况下) 显示效果差，造成阅读困难。</p>
+<h3 id="5-4-字体风格"><a href="#5-4-字体风格" class="headerlink" title="5.4 字体风格"></a>5.4 字体风格</h3><p>[强制] font-weight 属性必须使用数值方式描述。<br>解释：<br>CSS 的字重分 100 – 900 共九档，但目前受字体本身质量和浏览器的限制，实际上支持 400 和 700 两档，分别等价于关键词 normal 和 bold。<br>浏览器本身使用一系列<a href="https://www.w3.org/TR/CSS21/fonts.html#propdef-font-weight" target="_blank" rel="external">启发式规则</a>来进行匹配，在 <700 时一般匹配字体的="" regular="" 字重，="">=700 时匹配 Bold 字重。<br>但已有浏览器开始支持 =600 时匹配 Semibold 字重 (见<a href="http://justineo.github.io/slideshows/font/#/3/15" target="_blank" rel="external">此表</a>)，故使用数值描述增加了灵活性，也更简短。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/* good */</div><div class="line">h1 &#123;</div><div class="line">    font-weight: 700;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* bad */</div><div class="line">h1 &#123;</div><div class="line">    font-weight: bold;</div><div class="line">&#125;</div></pre></td></tr></table></figure></700></p>
+<h3 id="5-5-行高"><a href="#5-5-行高" class="headerlink" title="5.5 行高"></a>5.5 行高</h3><p>[建议] line-height 在定义文本段落时，应使用数值。<br>解释：<br>将 line-height 设置为数值，浏览器会基于当前元素设置的 font-size 进行再次计算。在不同字号的文本段落组合中，能达到较为舒适的行间间隔效果，避免在每个设置了 font-size 都需要设置 line-height。<br>当 line-height 用于控制垂直居中时，还是应该设置成与容器高度一致。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/* 需要垂直居中时 */</div><div class="line">.item &#123;</div><div class="line">    height: 20px;</div><div class="line">    line-height: 20px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 设置字号 */</div><div class="line">.item &#123;</div><div class="line">    line-height: 1;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="6-变换与动画"><a href="#6-变换与动画" class="headerlink" title="6. 变换与动画"></a>6. 变换与动画</h2><p>[强制] 使用 transition 时应指定 transition-property。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/* good */</div><div class="line">.box &#123;</div><div class="line">    transition: color 1s, border-color 1s;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* bad */</div><div class="line">.box &#123;</div><div class="line">    transition: all 1s;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>[建议] 尽可能在浏览器能高效实现的属性上添加过渡和动画。<br>解释：<br>见本文，在可能的情况下应选择这样四种变换：</p>
+<ul>
+<li>transform: translate(npx, npx);</li>
+<li>transform: scale(n);</li>
+<li>transform: rotate(ndeg);</li>
+<li>opacity: 0..1;<br>典型的，可以使用 translate 来代替 left 作为动画属性。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/* good */</div><div class="line">.box &#123;</div><div class="line">    transition: transform 1s;</div><div class="line">&#125;</div><div class="line">.box:hover &#123;</div><div class="line">    transform: translate(20px); /* move right for 20px */</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* bad */</div><div class="line">.box &#123;</div><div class="line">    left: 0;</div><div class="line">    transition: left 1s;</div><div class="line">&#125;</div><div class="line">.box:hover &#123;</div><div class="line">    left: 20px; /* move right for 20px */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="7-响应式"><a href="#7-响应式" class="headerlink" title="7. 响应式"></a>7. 响应式</h2><p>[强制] Media Query 不得单独编排，必须与相关的规则一起定义。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">/* Good */</div><div class="line">/* header styles */</div><div class="line">@media (...) &#123;</div><div class="line">    /* header styles */</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* main styles */</div><div class="line">@media (...) &#123;</div><div class="line">    /* main styles */</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* footer styles */</div><div class="line">@media (...) &#123;</div><div class="line">    /* footer styles */</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">/* Bad */</div><div class="line">/* header styles */</div><div class="line">/* main styles */</div><div class="line">/* footer styles */</div><div class="line"></div><div class="line">@media (...) &#123;</div><div class="line">    /* header styles */</div><div class="line">    /* main styles */</div><div class="line">    /* footer styles */</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>[强制] Media Query 如果有多个逗号分隔的条件时，应将每个条件放在单独一行中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@media</div><div class="line">(-webkit-min-device-pixel-ratio: 2), /* Webkit-based browsers */</div><div class="line">(min--moz-device-pixel-ratio: 2),    /* Older Firefox browsers (prior to Firefox 16) */</div><div class="line">(min-resolution: 2dppx),             /* The standard way */</div><div class="line">(min-resolution: 192dpi) &#123;           /* dppx fallback */</div><div class="line">    /* Retina-specific stuff here */</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>[建议] 尽可能给出在高分辨率设备 (Retina) 下效果更佳的样式。</p>
+<h2 id="8-兼容性"><a href="#8-兼容性" class="headerlink" title="8. 兼容性"></a>8. 兼容性</h2><h3 id="8-1-属性前缀"><a href="#8-1-属性前缀" class="headerlink" title="8.1 属性前缀"></a>8.1 属性前缀</h3><p>[强制] 带私有前缀的属性由长到短排列，按冒号位置对齐。<br>解释：<br>标准属性放在最后，按冒号对齐方便阅读，也便于在编辑器内进行多行编辑。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">    -webkit-box-sizing: border-box;</div><div class="line">       -moz-box-sizing: border-box;</div><div class="line">            box-sizing: border-box;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="8-2-Hack"><a href="#8-2-Hack" class="headerlink" title="8.2 Hack"></a>8.2 Hack</h3><p>[建议] 需要添加 hack 时应尽可能考虑是否可以采用其他方式解决。<br>解释：<br>如果能通过合理的 HTML 结构或使用其他的 CSS 定义达到理想的样式，则不应该使用 hack 手段解决问题。通常 hack 会导致维护成本的增加。</p>
+<p>[建议] 尽量使用 选择器 hack 处理兼容性，而非 属性 hack。<br>解释：<br>尽量使用符合 CSS 语法的 selector hack，可以避免一些第三方库无法识别 hack 语法的问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/* IE 7 */</div><div class="line">*:first-child + html #header &#123;</div><div class="line">    margin-top: 3px;</div><div class="line">    padding: 5px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* IE 6 */</div><div class="line">* html #header &#123;</div><div class="line">    margin-top: 5px;</div><div class="line">    padding: 4px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>[建议] 尽量使用简单的 属性 hack。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">    _display: inline; /* fix double margin */</div><div class="line">    float: left;</div><div class="line">    margin-left: 20px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.container &#123;</div><div class="line">    overflow: hidden;</div><div class="line">    *zoom: 1; /* triggering hasLayout */</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="8-3-Expression"><a href="#8-3-Expression" class="headerlink" title="8.3 Expression"></a>8.3 Expression</h3><p>[强制] 禁止使用 Expression。</p>
+<h2 id="9-说明"><a href="#9-说明" class="headerlink" title="9. 说明"></a>9. 说明</h2><p>本规范基于一些大厂规范做的一个自用整理<br>命名方式 和 注释规范 还有部分内容待整理<br><a href="https://github.com/fex-team/styleguide/blob/master/css.md" target="_blank" rel="external">FEX-TEAM CSS编码规范</a><br><a href="https://google.github.io/styleguide/htmlcssguide.html#CSS" target="_blank" rel="external">Google CSS StyleGuide</a></p>
+<h2 id="10-版本"><a href="#10-版本" class="headerlink" title="10. 版本"></a>10. 版本</h2><p>当前版本 v1.0 beta<br>作者 Shynee shynefu@gmail.com<br>最后更新时间 2017-05-16</p>
 
       
     </div>
@@ -142,16 +248,6 @@
   </div>
   
     
-<nav id="article-nav">
-  
-  
-    <a href="/2017/05/11/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">Hello world</div>
-    </a>
-  
-</nav>
-
   
 </article>
 
@@ -163,7 +259,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -172,7 +268,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -181,7 +277,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a>
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a>
     </div>
   </div>
 
@@ -190,7 +286,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -205,10 +301,6 @@
             <a href="/2017/05/12/css-style-guide/">CSS编码规范</a>
           </li>
         
-          <li>
-            <a href="/2017/05/11/hello-world/">Hello world</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -221,7 +313,7 @@
       <ul>
         
           <li>
-            <a href="http://www.baidu.com" target="_blank">百度</a>
+            <a href="https://weekly.75team.com/" target="_blank">奇舞周刊</a>
           </li>
         
       </ul>
