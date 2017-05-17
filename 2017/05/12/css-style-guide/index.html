@@ -6,17 +6,17 @@
   
   <title>CSS编码规范 | Shynee</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目录  前言    代码风格   2.1 文件 2.2 @charset 2.3 @import 2.4 缩进 2.5 换行 2.6 空格 2.7 行长度 2.8 选择器 2.9 属性 2.10 命名 2.11 注释    通用   3.1 选择器 3.2 属性缩写 3.3 属性书写顺序 3.4 清除浮动 3.5 !important 3.6 z-index    值与单位   4.1 文本 4.">
+  <meta name="description" content="目录 1. 前言 2. 代码风格 2.1 文件 2.2 @charset 2.3 @import 2.4 缩进 2.5 换行 2.6 空格 2.7 行长度 2.8 选择器 2.9 属性 2.10 命名 2.11 注释   3. 通用 3.1 选择器 3.2 属性缩写 3.3 属性书写顺序 3.4 清除浮动 3.5 !important 3.6 z-index   4. 值与单位 4.1 文本 4.">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS编码规范">
 <meta property="og:url" content="http://shynee.github.io/2017/05/12/css-style-guide/index.html">
 <meta property="og:site_name" content="Shynee">
-<meta property="og:description" content="目录  前言    代码风格   2.1 文件 2.2 @charset 2.3 @import 2.4 缩进 2.5 换行 2.6 空格 2.7 行长度 2.8 选择器 2.9 属性 2.10 命名 2.11 注释    通用   3.1 选择器 3.2 属性缩写 3.3 属性书写顺序 3.4 清除浮动 3.5 !important 3.6 z-index    值与单位   4.1 文本 4.">
-<meta property="og:updated_time" content="2017-05-17T02:08:22.190Z">
+<meta property="og:description" content="目录 1. 前言 2. 代码风格 2.1 文件 2.2 @charset 2.3 @import 2.4 缩进 2.5 换行 2.6 空格 2.7 行长度 2.8 选择器 2.9 属性 2.10 命名 2.11 注释   3. 通用 3.1 选择器 3.2 属性缩写 3.3 属性书写顺序 3.4 清除浮动 3.5 !important 3.6 z-index   4. 值与单位 4.1 文本 4.">
+<meta property="og:updated_time" content="2017-05-17T02:16:02.915Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS编码规范">
-<meta name="twitter:description" content="目录  前言    代码风格   2.1 文件 2.2 @charset 2.3 @import 2.4 缩进 2.5 换行 2.6 空格 2.7 行长度 2.8 选择器 2.9 属性 2.10 命名 2.11 注释    通用   3.1 选择器 3.2 属性缩写 3.3 属性书写顺序 3.4 清除浮动 3.5 !important 3.6 z-index    值与单位   4.1 文本 4.">
+<meta name="twitter:description" content="目录 1. 前言 2. 代码风格 2.1 文件 2.2 @charset 2.3 @import 2.4 缩进 2.5 换行 2.6 空格 2.7 行长度 2.8 选择器 2.9 属性 2.10 命名 2.11 注释   3. 通用 3.1 选择器 3.2 属性缩写 3.3 属性书写顺序 3.4 清除浮动 3.5 !important 3.6 z-index   4. 值与单位 4.1 文本 4.">
   
     <link rel="alternative" href="/atom.xml" title="Shynee" type="application/atom+xml">
   
@@ -95,14 +95,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
-<li><ol>
-<li>前言</li>
-</ol>
-</li>
-<li><ol>
-<li>代码风格</li>
-</ol>
-<ul>
+<li>1. 前言</li>
+<li>2. 代码风格<ul>
 <li>2.1 文件</li>
 <li>2.2 @charset</li>
 <li>2.3 @import</li>
@@ -116,10 +110,7 @@
 <li>2.11 注释</li>
 </ul>
 </li>
-<li><ol>
-<li>通用</li>
-</ol>
-<ul>
+<li>3. 通用<ul>
 <li>3.1 选择器</li>
 <li>3.2 属性缩写</li>
 <li>3.3 属性书写顺序</li>
@@ -128,10 +119,7 @@
 <li>3.6 z-index</li>
 </ul>
 </li>
-<li><ol>
-<li>值与单位</li>
-</ol>
-<ul>
+<li>4. 值与单位<ul>
 <li>4.1 文本</li>
 <li>4.2 数值</li>
 <li>4.3 url()</li>
@@ -140,10 +128,7 @@
 <li>4.6 2D 位置</li>
 </ul>
 </li>
-<li><ol>
-<li>文本编排</li>
-</ol>
-<ul>
+<li>5. 文本编排<ul>
 <li>5.1 字体族</li>
 <li>5.2 字号</li>
 <li>5.3 字体风格</li>
@@ -151,31 +136,16 @@
 <li>5.5 行高</li>
 </ul>
 </li>
-<li><ol>
-<li>变换与动画</li>
-</ol>
-</li>
-<li><ol>
-<li>响应式</li>
-</ol>
-</li>
-<li><ol>
-<li>兼容性</li>
-</ol>
-<ul>
+<li>6. 变换与动画</li>
+<li>7. 响应式</li>
+<li>8. 兼容性<ul>
 <li>8.1 属性前缀</li>
 <li>8.2 Hack</li>
 <li>8.3 Expression</li>
 </ul>
 </li>
-<li><ol>
-<li>说明</li>
-</ol>
-</li>
-<li><ol>
-<li>版本</li>
-</ol>
-</li>
+<li>9. 说明</li>
+<li>10. 版本</li>
 </ul>
 <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>制作规范的主要目的在于：</p>
 <ul>
@@ -319,7 +289,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://shynee.github.io/2017/05/12/css-style-guide/" data-id="cj2lp64ft00008wie83tqh3nj" class="article-share-link">分享到</a>
+        <a data-url="http://shynee.github.io/2017/05/12/css-style-guide/" data-id="cj2scn7qa000044iecdahynmk" class="article-share-link">分享到</a>
       
 
       
