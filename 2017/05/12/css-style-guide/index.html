@@ -6,17 +6,17 @@
   
   <title>CSS编码规范 | Shynee</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.前言制作规范的主要目的在于：  培养自己良好的编码和协同习惯 统一代码风格，提升代码质量和可维护性 减少无谓的思考，提升工作效率  2.代码风格2.1 文件[建议] css文件使用无 BOM 的 UTF-8 编码。解释：UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文件时可能造成不必要的干扰。参考：「带 BOM 的 UTF-8」和「无 BOM 的 UTF-8」有什么区别 2.">
+  <meta name="description" content="目录  前言    代码风格   2.1 文件 2.2 @charset 2.3 @import 2.4 缩进 2.5 换行 2.6 空格 2.7 行长度 2.8 选择器 2.9 属性 2.10 命名 2.11 注释    通用   3.1 选择器 3.2 属性缩写 3.3 属性书写顺序 3.4 清除浮动 3.5 !important 3.6 z-index    值与单位   4.1 文本 4.">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS编码规范">
 <meta property="og:url" content="http://shynee.github.io/2017/05/12/css-style-guide/index.html">
 <meta property="og:site_name" content="Shynee">
-<meta property="og:description" content="1.前言制作规范的主要目的在于：  培养自己良好的编码和协同习惯 统一代码风格，提升代码质量和可维护性 减少无谓的思考，提升工作效率  2.代码风格2.1 文件[建议] css文件使用无 BOM 的 UTF-8 编码。解释：UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文件时可能造成不必要的干扰。参考：「带 BOM 的 UTF-8」和「无 BOM 的 UTF-8」有什么区别 2.">
-<meta property="og:updated_time" content="2017-05-16T08:04:52.026Z">
+<meta property="og:description" content="目录  前言    代码风格   2.1 文件 2.2 @charset 2.3 @import 2.4 缩进 2.5 换行 2.6 空格 2.7 行长度 2.8 选择器 2.9 属性 2.10 命名 2.11 注释    通用   3.1 选择器 3.2 属性缩写 3.3 属性书写顺序 3.4 清除浮动 3.5 !important 3.6 z-index    值与单位   4.1 文本 4.">
+<meta property="og:updated_time" content="2017-05-17T02:08:22.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS编码规范">
-<meta name="twitter:description" content="1.前言制作规范的主要目的在于：  培养自己良好的编码和协同习惯 统一代码风格，提升代码质量和可维护性 减少无谓的思考，提升工作效率  2.代码风格2.1 文件[建议] css文件使用无 BOM 的 UTF-8 编码。解释：UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文件时可能造成不必要的干扰。参考：「带 BOM 的 UTF-8」和「无 BOM 的 UTF-8」有什么区别 2.">
+<meta name="twitter:description" content="目录  前言    代码风格   2.1 文件 2.2 @charset 2.3 @import 2.4 缩进 2.5 换行 2.6 空格 2.7 行长度 2.8 选择器 2.9 属性 2.10 命名 2.11 注释    通用   3.1 选择器 3.2 属性缩写 3.3 属性书写顺序 3.4 清除浮动 3.5 !important 3.6 z-index    值与单位   4.1 文本 4.">
   
     <link rel="alternative" href="/atom.xml" title="Shynee" type="application/atom+xml">
   
@@ -94,13 +94,96 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>制作规范的主要目的在于：</p>
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><ol>
+<li>前言</li>
+</ol>
+</li>
+<li><ol>
+<li>代码风格</li>
+</ol>
+<ul>
+<li>2.1 文件</li>
+<li>2.2 @charset</li>
+<li>2.3 @import</li>
+<li>2.4 缩进</li>
+<li>2.5 换行</li>
+<li>2.6 空格</li>
+<li>2.7 行长度</li>
+<li>2.8 选择器</li>
+<li>2.9 属性</li>
+<li>2.10 命名</li>
+<li>2.11 注释</li>
+</ul>
+</li>
+<li><ol>
+<li>通用</li>
+</ol>
+<ul>
+<li>3.1 选择器</li>
+<li>3.2 属性缩写</li>
+<li>3.3 属性书写顺序</li>
+<li>3.4 清除浮动</li>
+<li>3.5 !important</li>
+<li>3.6 z-index</li>
+</ul>
+</li>
+<li><ol>
+<li>值与单位</li>
+</ol>
+<ul>
+<li>4.1 文本</li>
+<li>4.2 数值</li>
+<li>4.3 url()</li>
+<li>4.4 长度</li>
+<li>4.5 颜色</li>
+<li>4.6 2D 位置</li>
+</ul>
+</li>
+<li><ol>
+<li>文本编排</li>
+</ol>
+<ul>
+<li>5.1 字体族</li>
+<li>5.2 字号</li>
+<li>5.3 字体风格</li>
+<li>5.4 字重</li>
+<li>5.5 行高</li>
+</ul>
+</li>
+<li><ol>
+<li>变换与动画</li>
+</ol>
+</li>
+<li><ol>
+<li>响应式</li>
+</ol>
+</li>
+<li><ol>
+<li>兼容性</li>
+</ol>
+<ul>
+<li>8.1 属性前缀</li>
+<li>8.2 Hack</li>
+<li>8.3 Expression</li>
+</ul>
+</li>
+<li><ol>
+<li>说明</li>
+</ol>
+</li>
+<li><ol>
+<li>版本</li>
+</ol>
+</li>
+</ul>
+<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>制作规范的主要目的在于：</p>
 <ul>
 <li>培养自己良好的编码和协同习惯</li>
 <li>统一代码风格，提升代码质量和可维护性</li>
 <li>减少无谓的思考，提升工作效率</li>
 </ul>
-<h2 id="2-代码风格"><a href="#2-代码风格" class="headerlink" title="2.代码风格"></a>2.代码风格</h2><h3 id="2-1-文件"><a href="#2-1-文件" class="headerlink" title="2.1 文件"></a>2.1 文件</h3><p>[建议] css文件使用无 BOM 的 UTF-8 编码。<br>解释：UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文件时可能造成不必要的干扰。<br>参考：<a href="https://www.zhihu.com/question/20167122" target="_blank" rel="external">「带 BOM 的 UTF-8」和「无 BOM 的 UTF-8」有什么区别</a></p>
+<h2 id="2-代码风格"><a href="#2-代码风格" class="headerlink" title="2. 代码风格"></a>2. 代码风格</h2><h3 id="2-1-文件"><a href="#2-1-文件" class="headerlink" title="2.1 文件"></a>2.1 文件</h3><p>[建议] css文件使用无 BOM 的 UTF-8 编码。<br>解释：UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文件时可能造成不必要的干扰。<br>参考：<a href="https://www.zhihu.com/question/20167122" target="_blank" rel="external">「带 BOM 的 UTF-8」和「无 BOM 的 UTF-8」有什么区别</a></p>
 <h3 id="2-2-charset"><a href="#2-2-charset" class="headerlink" title="2.2 @charset"></a>2.2 @charset</h3><p>[建议] 为每个css文档显示的定义编码，在文档首行定义 @charset “utf-8”。<br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@charset &quot;utf-8&quot;;</div><div class="line"></div><div class="line">html &#123;</div><div class="line">    margin: 0;</div><div class="line">    padding: 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="2-3-import"><a href="#2-3-import" class="headerlink" title="2.3 @import"></a>2.3 @import</h3><p>[建议] 尽量不要使用@import导入css</p>
 <h3 id="2-4-缩进"><a href="#2-4-缩进" class="headerlink" title="2.4 缩进"></a>2.4 缩进</h3><p>[强制] 使用 4 个空格做为一个缩进层级，不允许使用 2 个空格 或 tab 字符。<br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">    margin: 0;</div><div class="line">    padding: 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
